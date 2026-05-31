@@ -10,6 +10,9 @@ interface Organization {
   name: string;
   period: string;
   desc: string;
+  image?: string;
+  coverImage?: string;
+  images?: { src: string; alt: string }[];
 }
 
 export const OrganizationsSection: React.FC = () => {
@@ -44,8 +47,12 @@ export const OrganizationsSection: React.FC = () => {
                   style={{ clipPath: 'polygon(0 10%, 100% 0, 95% 90%, 5% 100%)'}}
                 ></div>
                 
-                <div className="aspect-video bg-gray-100 mb-4 flex items-center justify-center overflow-hidden border border-gray-200">
-                   <Users className="text-gray-300" size={40} />
+                <div className="aspect-video bg-gray-100 mb-4 flex items-center justify-center overflow-hidden border border-gray-200 rounded-2xl">
+                  {org.coverImage || org.image ? (
+                    <img src={org.coverImage || org.image} alt={org.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <Users className="text-gray-300" size={40} />
+                  )}
                 </div>
                 
                 <div className="font-handwriting text-center">
@@ -60,21 +67,38 @@ export const OrganizationsSection: React.FC = () => {
 
       <FullscreenModal isOpen={!!selectedOrg} onClose={() => setSelectedOrg(null)}>
         {selectedOrg && (
-          <div className="text-center max-w-2xl mx-auto space-y-6 py-12">
-            <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto flex items-center justify-center mb-6 shadow-inner">
-               <Users className="text-gray-400" size={40} />
+          <div className="space-y-8 py-12 text-center max-w-5xl mx-auto">
+            <div className="space-y-6">
+              <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto flex items-center justify-center shadow-inner overflow-hidden">
+                {selectedOrg.coverImage || selectedOrg.image ? <img src={selectedOrg.coverImage || selectedOrg.image} alt={selectedOrg.name} className="w-full h-full object-cover" /> : <Users className="text-gray-400" size={40} />}
+              </div>
+              <span className="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-sm font-bold text-gray-600 tracking-wider uppercase">
+                {selectedOrg.period}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold">{selectedOrg.name}</h2>
+              <h3 className="text-xl md:text-2xl text-indigo-600 font-medium">{selectedOrg.role}</h3>
+              <div className="w-16 h-1 bg-gray-200 mx-auto my-8"></div>
+              <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                {selectedOrg.desc}
+              </p>
             </div>
-            <span className="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-sm font-bold text-gray-600 tracking-wider uppercase">
-              {selectedOrg.period}
-            </span>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold">{selectedOrg.name}</h2>
-            <h3 className="text-xl md:text-2xl text-indigo-600 font-medium">{selectedOrg.role}</h3>
-            
-            <div className="w-16 h-1 bg-gray-200 mx-auto my-8"></div>
-            
-            <p className="text-lg text-gray-600 leading-relaxed">
-              {selectedOrg.desc}
-            </p>
+
+            {selectedOrg.images && selectedOrg.images.length > 0 && (
+              <div className="space-y-4 pt-6 border-t border-gray-100 text-left">
+                <h4 className="text-2xl font-heading font-semibold text-center">Documentation</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
+                  {selectedOrg.images.map((image, idx) => (
+                    <figure key={idx} className="rounded-2xl border border-gray-100 bg-gray-50 shadow-sm p-3">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="block w-full h-auto max-h-[520px] object-contain mx-auto"
+                      />
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </FullscreenModal>

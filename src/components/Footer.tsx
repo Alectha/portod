@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
           </a>
 
           <a 
-            href="https://instagram.com/dewi.ps_" 
+            href="https://www.instagram.com/dewiipss_/" 
             target="_blank" 
             rel="noreferrer" 
             className="w-full group relative flex items-center justify-between px-8 py-5 text-lg font-bold text-black bg-white rounded-2xl overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl shadow-sm border border-gray-200"
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
           </a>
 
           <a 
-            href="https://linkedin.com/in/dewi-ps" 
+            href="https://www.linkedin.com/in/dewi-puspita16/" 
             target="_blank" 
             rel="noreferrer" 
             className="w-full group relative flex items-center justify-between px-8 py-5 text-lg font-bold text-black bg-white rounded-2xl overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl shadow-sm border border-gray-200"

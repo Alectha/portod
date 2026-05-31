@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Linkedin, Mail } from 'lucide-react';
+import { GraduationCap, Instagram, Linkedin } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
 import { PORTFOLIO_DATA } from '@data/portfolioData';
 import profilePortrait from '../assets/images/about-profile-portrait.jpeg';
@@ -26,7 +26,7 @@ export const AboutSection: React.FC = () => {
 
             <div className="flex gap-4 flex-col sm:flex-row">
               <a 
-                href="https://linkedin.com/in/dewi-ps" 
+                href="https://www.linkedin.com/in/dewi-puspita16/" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="flex-1 py-4 rounded-2xl border border-gray-200 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all font-medium shadow-sm"
@@ -34,10 +34,12 @@ export const AboutSection: React.FC = () => {
                 <Linkedin size={20} /> LinkedIn
               </a>
               <a 
-                href="mailto:dewipspitasarii@gmail.com" 
+                href="https://www.instagram.com/dewiipss_/" 
+                target="_blank" 
+                rel="noreferrer" 
                 className="flex-1 py-4 rounded-2xl border border-gray-200 flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all font-medium shadow-sm"
               >
-                <Mail size={20} /> Email
+                <Instagram size={20} /> Instagram
               </a>
             </div>
           </div>

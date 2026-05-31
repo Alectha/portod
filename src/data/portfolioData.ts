@@ -2,6 +2,41 @@ import {
   Briefcase, FolderKanban, MonitorSmartphone, PenTool, BarChart3, Lightbulb, Workflow
 } from 'lucide-react';
 
+import boxlyyCover from '../assets/images/boxlyy-cover.png';
+import boxlyy02 from '../assets/images/project-boxlyy-02.jpeg';
+import boxlyy03 from '../assets/images/project-boxlyy-03.jpeg';
+import famlypayCover from '../assets/images/famlypay-cover.jpeg';
+import famlypay01 from '../assets/images/project-famlypay-01.jpeg';
+import famlypay02 from '../assets/images/project-famlypay-02.jpeg';
+import famlypay03 from '../assets/images/project-famlypay-03.jpeg';
+import famlypay04 from '../assets/images/project-famlypay-04.jpeg';
+import ebcdCover from '../assets/images/ebcd-cover.jpeg';
+import ebcd01 from '../assets/images/ebcd-01.jpeg';
+import ebcd02 from '../assets/images/ebcd-02.jpeg';
+import ebcd03 from '../assets/images/ebcd-03.jpeg';
+import sivolutionCover from '../assets/images/sivolution-cover.jpeg';
+import sivolution01 from '../assets/images/sivolution-01.jpeg';
+import sivolution02 from '../assets/images/sivolution-02.jpeg';
+import sivolutionSeminarCover from '../assets/images/sivolution-seminar-cover.jpeg';
+import sivolutionSeminar01 from '../assets/images/sivolution-seminar-01.jpeg';
+import sivolutionSeminar03 from '../assets/images/sivolution-seminar-03.jpeg';
+import sivolutionSeminar04 from '../assets/images/sivolution-seminar-04.jpeg';
+import rebizCover from '../assets/images/rebiz-cover.jpeg';
+import rebiz01 from '../assets/images/rebiz-01.jpeg';
+import rebiz02 from '../assets/images/rebiz-02.jpeg';
+import musyawarahCover from '../assets/images/musyawarah-cover.jpeg';
+import musyawarah01 from '../assets/images/musyawarah-01.jpeg';
+import musyawarah02 from '../assets/images/musyawarah-02.jpeg';
+import hmsiCover from '../assets/images/hmsi-cover.jpeg';
+import hmsi01 from '../assets/images/hmsi-01.jpeg';
+import hmsi02 from '../assets/images/hmsi-02.jpeg';
+import hmsi03 from '../assets/images/hmsi-03.jpeg';
+import hmsi04 from '../assets/images/hmsi-04.jpeg';
+import penyematanCover from '../assets/images/Penyematan-cover.jpeg';
+import penyematan01 from '../assets/images/Penyematan-01.jpeg';
+import penyematan02 from '../assets/images/Penyematan-02.jpeg';
+import penyematan03 from '../assets/images/Penyematan-03.jpeg';
+
 export const PORTFOLIO_DATA = {
   about: {
     title: "Portfolio Dewi PS",
@@ -80,7 +115,12 @@ export const PORTFOLIO_DATA = {
         "Implemented content marketing, campaign strategies, and performance evaluations using insights, social media analytics, and consumer behavior analysis."
       ],
       tags: ["Digital Marketing", "Strategy", "Branding"],
-      color: "from-pink-100 to-rose-200"
+      color: "from-pink-100 to-rose-200",
+      coverImage: boxlyyCover,
+      images: [
+        { src: boxlyy02, alt: "Boxlyy Instagram link-in-bio mockup" },
+        { src: boxlyy03, alt: "Boxlyy social media feed mockup" }
+      ]
     },
     {
       title: "Digital Business Development - GreenStock",
@@ -103,7 +143,14 @@ export const PORTFOLIO_DATA = {
         "Created user flows, task flows, and high-fidelity UI/UX mockups using a user-centered approach to deliver an intuitive and transparent financial management experience."
       ],
       tags: ["UI/UX", "Product Strategy", "Fintech"],
-      color: "from-blue-100 to-cyan-200"
+      color: "from-blue-100 to-cyan-200",
+      coverImage: famlypayCover,
+      images: [
+        { src: famlypay01, alt: "Famly Pay home dashboard mockup" },
+        { src: famlypay02, alt: "Famly Pay family investment mockup" },
+        { src: famlypay03, alt: "Famly Pay profile settings mockup" },
+        { src: famlypay04, alt: "Famly Pay transaction history mockup" }
+      ]
     },
     {
       title: "Product Discovery & Prototyping - WedMuse",
@@ -133,17 +180,43 @@ export const PORTFOLIO_DATA = {
   achievements: [
     { title: "Certified Digital Marketing by BNSP", details: "Through the Dispora Certification Program." },
     { title: "Certified ICT Project Manager by BNSP", details: "Professional certification for project management in IT." },
-    { title: "Published SINTA 4 Journal Article", details: "IT Service Management evaluation using the ITIL V4 framework for the BKPSDM Ciamis E-Presence System." },
+    { title: "Published SINTA 4 Journal Article", details: "IT Service Management evaluation using the ITIL V4 framework for the BKPSDM Ciamis E-Presence System.", href: "https://journal.ibrahimy.ac.id/index.php/JIMI/article/view/8406" },
     { title: "Accepted SINTA 5 Journal", details: "Research on fintech platform development to address Sandwich Generation challenges in Indonesia." }
   ],
   organizations: [
-    { role: "Member of R&D Division", name: "Himpunan Mahasiswa Sistem Informasi (HMSI)", period: "Jan 2025 - Dec 2025", desc: "Playing a role in planning, idea, research, and development of innovative programs." },
-    { role: "Chief Executive", name: "EBCD Training Program", period: "Sep 2025", desc: "Led 25 members, managed 70+ participants, achieving 92% satisfaction rate." },
-    { role: "Secretary", name: "REBIZ Training Program", period: "Oct 2025", desc: "Managed administrative workflows and participant databases." },
-    { role: "Event Division", name: "Sivolution 3.0", period: "Nov 2025", desc: "Designing event schedules and coordinating smooth implementation." },
-    { role: "Master of Ceremonies (MC)", name: "Sivolution National Seminar", period: "Nov 2025", desc: "Hosted audience of 150+ participants, introduced keynote speakers." },
-    { role: "Event Div & MC", name: "Penyematan Jaket Himpunan SI 2023", period: "Aug 2024", desc: "Designed rundown and hosted the official inauguration ceremony." },
-    { role: "Publication, Doc & Design", name: "Musyawarah Mahasiswa Sistem Informasi", period: "Dec 2024", desc: "Created visual assets and managed digital publications." },
+    { role: "Member of R&D Division", name: "Himpunan Mahasiswa Sistem Informasi (HMSI)", period: "Jan 2025 - Dec 2025", desc: "Playing a role in planning, idea, research, and development of innovative programs.", coverImage: hmsiCover, images: [
+      { src: hmsi01, alt: "HMSI activities documentation 1" },
+      { src: hmsi02, alt: "HMSI activities documentation 2" },
+      { src: hmsi03, alt: "HMSI activities documentation 3" },
+      { src: hmsi04, alt: "HMSI activities documentation 4" }
+    ] },
+    { role: "Chief Executive", name: "EBCD Training Program", period: "Sep 2025", desc: "Led 25 members, managed 70+ participants, achieving 92% satisfaction rate.", coverImage: ebcdCover, images: [
+      { src: ebcd01, alt: "EBCD Training Program documentation 1" },
+      { src: ebcd02, alt: "EBCD Training Program documentation 2" },
+      { src: ebcd03, alt: "EBCD Training Program documentation 3" }
+    ] },
+    { role: "Secretary", name: "REBIZ Training Program", period: "Oct 2025", desc: "Managed administrative workflows and participant databases.", coverImage: rebizCover, images: [
+      { src: rebiz01, alt: "REBIZ documentation 1" },
+      { src: rebiz02, alt: "REBIZ documentation 2" }
+    ] },
+    { role: "Event Division", name: "Sivolution 3.0", period: "Nov 2025", desc: "Designing event schedules and coordinating smooth implementation.", coverImage: sivolutionCover, images: [
+      { src: sivolution01, alt: "Sivolution 3.0 documentation 1" },
+      { src: sivolution02, alt: "Sivolution 3.0 documentation 2" }
+    ] },
+    { role: "Master of Ceremonies (MC)", name: "Sivolution National Seminar", period: "Nov 2025", desc: "Hosted audience of 150+ participants, introduced keynote speakers.", coverImage: sivolutionSeminarCover, images: [
+      { src: sivolutionSeminar01, alt: "Sivolution National Seminar documentation 1" },
+      { src: sivolutionSeminar03, alt: "Sivolution National Seminar documentation 3" },
+      { src: sivolutionSeminar04, alt: "Sivolution National Seminar documentation 4" }
+    ] },
+    { role: "Event Div & MC", name: "Penyematan Jaket Himpunan SI 2023", period: "Aug 2024", desc: "Designed rundown and hosted the official inauguration ceremony.", coverImage: penyematanCover, images: [
+      { src: penyematan01, alt: "Penyematan documentation 1" },
+      { src: penyematan02, alt: "Penyematan documentation 2" },
+      { src: penyematan03, alt: "Penyematan documentation 3" }
+    ] },
+    { role: "Publication, Doc & Design", name: "Musyawarah Mahasiswa Sistem Informasi", period: "Dec 2024", desc: "Created visual assets and managed digital publications.", coverImage: musyawarahCover, images: [
+      { src: musyawarah01, alt: "Musyawarah documentation 1" },
+      { src: musyawarah02, alt: "Musyawarah documentation 2" }
+    ] },
     { role: "Secretary", name: "Theater 'Munggaran' (SMKN 1 Garut)", period: "Aug 2021 - Aug 2022", desc: "Managed administrative workflows and activity records." }
   ]
 };

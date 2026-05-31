@@ -9,6 +9,7 @@ import certificatePreview from '../assets/images/achievement-certificate-preview
 interface Achievement {
   title: string;
   details: string;
+  href?: string;
 }
 
 export const AchievementsSection: React.FC = () => {
@@ -59,7 +60,19 @@ export const AchievementsSection: React.FC = () => {
                   className="w-full h-full object-cover mix-blend-multiply opacity-90" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                   <p className="text-white font-medium text-lg text-left">Official Document Preview for {selectedAch.title}</p>
+                   <div className="text-left space-y-4">
+                     <p className="text-white font-medium text-lg">Official Document Preview for {selectedAch.title}</p>
+                     {selectedAch.href && (
+                       <a
+                         href={selectedAch.href}
+                         target="_blank"
+                         rel="noreferrer"
+                         className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-gray-900 transition-transform hover:-translate-y-0.5"
+                       >
+                         Open Publication
+                       </a>
+                     )}
+                   </div>
                 </div>
             </div>
           </div>

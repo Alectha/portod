@@ -12,6 +12,8 @@ interface Project {
   details: string[];
   tags: string[];
   color: string;
+  coverImage?: string;
+  images?: { src: string; alt: string }[];
 }
 
 export const ProjectsSection: React.FC = () => {
@@ -31,9 +33,20 @@ export const ProjectsSection: React.FC = () => {
               onClick={() => setSelectedProject(project)}
             >
               <div className={`h-64 w-full bg-gradient-to-br ${project.color} relative overflow-hidden flex items-center justify-center p-8`}>
-                 <h3 className="text-4xl font-heading font-bold text-black/80 text-center relative z-10 mix-blend-color-burn">{project.title.split(' - ')[1] || project.title}</h3>
-                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent mix-blend-overlay"></div>
-                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-20"></div>
+                {project.coverImage ? (
+                  <>
+                    <img
+                      src={project.coverImage}
+                      alt={project.title}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>
+                  </>
+                ) : (
+                  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent mix-blend-overlay"></div>
+                )}
+                <h3 className="text-4xl font-heading font-bold text-white text-center relative z-10 drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]">{project.title.split(' - ')[1] || project.title}</h3>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-20"></div>
               </div>
               
               <div className="p-8 flex-grow flex flex-col">
@@ -61,7 +74,17 @@ export const ProjectsSection: React.FC = () => {
         {selectedProject && (
           <div className="space-y-8 text-black">
             <div className={`w-full h-64 md:h-96 rounded-3xl bg-gradient-to-br ${selectedProject.color} flex items-center justify-center mb-8 relative overflow-hidden`}>
-              <h2 className="text-5xl md:text-7xl font-heading font-bold text-black/70 mix-blend-color-burn text-center px-4">
+              {selectedProject.coverImage ? (
+                <>
+                  <img
+                    src={selectedProject.coverImage}
+                    alt={selectedProject.title}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
+                </>
+              ) : null}
+              <h2 className="text-5xl md:text-7xl font-heading font-bold text-white text-center px-4 relative z-10 drop-shadow-[0_2px_18px_rgba(0,0,0,0.4)]">
                 {selectedProject.title.split(' - ')[1] || selectedProject.title}
               </h2>
             </div>
@@ -89,6 +112,23 @@ export const ProjectsSection: React.FC = () => {
                   <h3 className="text-3xl font-heading font-bold mb-4">{selectedProject.title}</h3>
                   <p className="text-xl text-gray-600 leading-relaxed">{selectedProject.description}</p>
                 </div>
+
+                {selectedProject.images && selectedProject.images.length > 0 && (
+                  <div className="space-y-4 pt-6 border-t border-gray-100">
+                    <h4 className="text-2xl font-heading font-semibold">Documentation</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
+                      {selectedProject.images.map((image, idx) => (
+                        <figure key={idx} className="rounded-2xl border border-gray-100 bg-gray-50 shadow-sm p-3">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="block w-full h-auto max-h-[520px] object-contain mx-auto"
+                          />
+                        </figure>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 
                 <div className="space-y-6 pt-6 border-t border-gray-100">
                   <h4 className="text-2xl font-heading font-semibold">Process & Details</h4>
