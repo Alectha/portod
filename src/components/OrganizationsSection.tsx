@@ -48,8 +48,8 @@ export const OrganizationsSection: React.FC = () => {
                 ></div>
                 
                 <div className="aspect-video bg-gray-100 mb-4 flex items-center justify-center overflow-hidden border border-gray-200 rounded-2xl">
-                  {org.coverImage || org.image ? (
-                    <img src={org.coverImage || org.image} alt={org.name} className="w-full h-full object-cover" />
+                  {org.coverImage ? (
+                    <img src={org.coverImage} alt={org.name} className="w-full h-full object-cover" />
                   ) : (
                     <Users className="text-gray-300" size={40} />
                   )}
@@ -70,7 +70,7 @@ export const OrganizationsSection: React.FC = () => {
           <div className="space-y-8 py-12 text-center max-w-5xl mx-auto">
             <div className="space-y-6">
               <div className="w-24 h-24 bg-gray-100 rounded-full mx-auto flex items-center justify-center shadow-inner overflow-hidden">
-                {selectedOrg.coverImage || selectedOrg.image ? <img src={selectedOrg.coverImage || selectedOrg.image} alt={selectedOrg.name} className="w-full h-full object-cover" /> : <Users className="text-gray-400" size={40} />}
+                {selectedOrg.coverImage ? <img src={selectedOrg.coverImage} alt={selectedOrg.name} className="w-full h-full object-cover" /> : <Users className="text-gray-400" size={40} />}
               </div>
               <span className="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-sm font-bold text-gray-600 tracking-wider uppercase">
                 {selectedOrg.period}
