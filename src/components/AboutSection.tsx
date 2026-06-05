@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { GraduationCap, Instagram, Linkedin } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
 import { PORTFOLIO_DATA } from '@data/portfolioData';
-import profilePortrait from '../assets/images/about-profile-portrait.jpeg';
+import heroIllustration from '../assets/images/hero-abstract-illustration.jpeg';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ export const AboutSection: React.FC = () => {
           <div className="hidden lg:flex lg:col-span-4 flex-col gap-5 lg:gap-6 lg:sticky lg:top-32">
             <div className="w-full aspect-[3/4] lg:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl bg-gray-100 relative group max-w-md lg:max-w-none mx-auto lg:mx-0">
               <img 
-                src={profilePortrait} 
+                src={heroIllustration} 
                 alt="Dewi Puspita Sari" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               />
@@ -55,7 +55,7 @@ export const AboutSection: React.FC = () => {
               <p className="text-xl md:text-2xl text-gray-800 font-light leading-relaxed mb-6">
                 <span className="font-semibold text-black">Third-year Information Systems student</span> with a concentration in Digital Business, interested in digital marketing, product strategy, UI/UX design, business analysis, product and project management.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">
                 Certified in Digital Marketing and ICT Project Management by BNSP and currently participating in the MSIB program at Vinix7 in the Digital Business division. Experienced in developing digital product concepts, conducting market research, and creating user-centered solutions.
               </p>
             </motion.div>

@@ -39,7 +39,7 @@ export const ExperienceSection: React.FC = () => {
                 <span className="text-sm font-bold text-indigo-500 uppercase tracking-wider">{exp.period}</span>
               </div>
               
-              <div className="md:col-span-4 bg-gray-50 rounded-3xl p-8 group-hover:bg-white group-hover:shadow-xl transition-all border border-transparent group-hover:border-gray-100 relative overflow-hidden">
+              <div className="md:col-span-4 md:ml-8 bg-gray-50 rounded-3xl p-8 group-hover:bg-white group-hover:shadow-xl transition-all border border-transparent group-hover:border-gray-100 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-bl-full -mr-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <h3 className="text-2xl font-heading font-bold mb-1">{exp.role}</h3>

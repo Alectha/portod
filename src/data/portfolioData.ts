@@ -31,7 +31,6 @@ import hmsiCover from '../assets/images/hmsi-cover.jpeg';
 import hmsi01 from '../assets/images/hmsi-01.jpeg';
 import hmsi02 from '../assets/images/hmsi-02.jpeg';
 import hmsi03 from '../assets/images/hmsi-03.jpeg';
-import hmsi04 from '../assets/images/hmsi-04.jpeg';
 import penyematanCover from '../assets/images/Penyematan-cover.jpeg';
 import penyematan01 from '../assets/images/Penyematan-01.jpeg';
 import penyematan02 from '../assets/images/Penyematan-02.jpeg';
@@ -74,17 +73,6 @@ export const PORTFOLIO_DATA = {
   ],
   experience: [
     {
-      role: "Digital Business Intern",
-      company: "Vinix7 (MSIB Program)",
-      period: "Feb 2026 - Present",
-      description: [
-        "Conducted business analysis and evaluated digital business opportunities for external companies.",
-        "Developed a digital startup product concept, including business model canvas, business plan, and pitch deck.",
-        "Designed product prototypes, pricing strategies, and operational business plans.",
-        "Created social media marketing content and copywriting to support product branding and promotion. Collaborated with teams in digital business development and product strategy initiatives."
-      ]
-    },
-    {
       role: "Freelancer Graphic Design",
       company: "Self Employed",
       period: "Jan 2023 - Present",
@@ -101,6 +89,17 @@ export const PORTFOLIO_DATA = {
         "Write an interesting blog about tourism and copywrites content.",
         "Content creator who focuses on creative video production. Able to write scripts, operate cameras, edit videos, and conceptualize interesting stories.",
         "Event organizer with experience planning and executing various types of events, from workshops, seminars, to product exhibitions."
+      ]
+    },
+    {
+      role: "Digital Business Intern",
+      company: "Vinix7 (MSIB Program)",
+      period: "Feb 2026 - May 2026",
+      description: [
+        "Conducted business analysis and evaluated digital business opportunities for external companies.",
+        "Developed a digital startup product concept, including business model canvas, business plan, and pitch deck.",
+        "Designed product prototypes, pricing strategies, and operational business plans.",
+        "Created social media marketing content and copywriting to support product branding and promotion. Collaborated with teams in digital business development and product strategy initiatives."
       ]
     }
   ],
@@ -187,8 +186,7 @@ export const PORTFOLIO_DATA = {
     { role: "Member of R&D Division", name: "Himpunan Mahasiswa Sistem Informasi (HMSI)", period: "Jan 2025 - Dec 2025", desc: "Playing a role in planning, idea, research, and development of innovative programs.", coverImage: hmsiCover, images: [
       { src: hmsi01, alt: "HMSI activities documentation 1" },
       { src: hmsi02, alt: "HMSI activities documentation 2" },
-      { src: hmsi03, alt: "HMSI activities documentation 3" },
-      { src: hmsi04, alt: "HMSI activities documentation 4" }
+      { src: hmsi03, alt: "HMSI activities documentation 3" }
     ] },
     { role: "Chief Executive", name: "EBCD Training Program", period: "Sep 2025", desc: "Led 25 members, managed 70+ participants, achieving 92% satisfaction rate.", coverImage: ebcdCover, images: [
       { src: ebcd01, alt: "EBCD Training Program documentation 1" },

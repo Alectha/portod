@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
-import heroIllustration from '../assets/images/hero-abstract-illustration.jpeg';
+import { ArrowUpRight, Menu, X, Briefcase } from 'lucide-react';
+import profilePortrait from '../assets/images/about-profile-portrait.jpeg';
+import cvFile from '../assets/document/cv_dewips.pdf';
 
 export const Navigation: React.FC = () => {
   const [active, setActive] = useState<string>('home');
@@ -51,7 +52,7 @@ export const Navigation: React.FC = () => {
 
           <div className="hidden md:flex items-center rounded-full border border-white/20 bg-white/50 px-3 py-2 shadow-sm backdrop-blur-md">
             {items.map((item) => {
-              const id = item.toLowerCase();
+              const id = item.toLowerCase() === 'project' ? 'projects' : item.toLowerCase();
               const isActive = active === id || (active === 'home' && id === 'home');
               return (
                 <a
@@ -78,7 +79,7 @@ export const Navigation: React.FC = () => {
             <div className="pointer-events-auto rounded-3xl border border-white/20 bg-white/60 p-3 shadow-lg backdrop-blur-md">
               <div className="flex flex-col gap-1">
                 {items.map((item) => {
-                  const id = item.toLowerCase();
+                  const id = item.toLowerCase() === 'project' ? 'projects' : item.toLowerCase();
                   const isActive = active === id || (active === 'home' && id === 'home');
                   return (
                     <a
@@ -125,12 +126,12 @@ export const HeroSection: React.FC = () => {
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <a href="#projects" className="group relative px-8 py-4 bg-black text-white rounded-full overflow-hidden font-medium text-lg flex items-center gap-2">
+              <a href="#experience" className="group relative px-8 py-4 bg-black text-white rounded-full overflow-hidden font-medium text-lg flex items-center gap-2">
                 <span className="relative z-10">Explore</span>
                 <ArrowUpRight className="relative z-10 group-hover:rotate-45 transition-transform" size={20} />
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
               </a>
-              <a href="#" className="px-8 py-4 rounded-full border border-gray-300 hover:border-black transition-colors font-medium text-lg flex items-center">
+              <a href={cvFile} download="cv_dewips.pdf" className="px-8 py-4 rounded-full border border-gray-300 hover:border-black transition-colors font-medium text-lg flex items-center">
                 CV
               </a>
             </div>
@@ -145,9 +146,9 @@ export const HeroSection: React.FC = () => {
             {/* Abstract aesthetic image representation */}
             <div className="relative w-[72%] max-w-[210px] sm:max-w-[240px] md:w-full md:max-w-md aspect-square md:aspect-[4/5] rounded-full md:rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-2xl">
                <img 
-                 src={heroIllustration} 
-                 alt="Abstract portfolio illustration" 
-                 className="w-full h-full object-cover" 
+                 src={profilePortrait} 
+                 alt="Dewi Puspita" 
+                 className="w-full h-full object-cover scale-[1.3] origin-center" 
                />
                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
             </div>
@@ -159,9 +160,9 @@ export const HeroSection: React.FC = () => {
               className="hidden md:flex absolute top-20 right-10 md:-right-4 glass-panel px-4 py-3 rounded-2xl shadow-lg items-center gap-3"
             >
               <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                📐
+                <Briefcase size={16} />
               </div>
-              <span className="font-medium text-sm">UI/UX Design</span>
+              <span className="font-medium text-sm">Digital Business</span>
             </motion.div>
             
             <motion.div 
