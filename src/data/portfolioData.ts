@@ -62,7 +62,6 @@ export const PORTFOLIO_DATA = {
       degree: "Bachelor of Information Systems | Digital Business Concentration",
       gpa: "GPA 3.83/4.00",
       period: "Aug 2023 - Present",
-      details: "Focus on Market Research & Business Analysis, UI/UX Design & Prototyping, Project Management."
     },
     {
       institution: "SMKN 1 Garut - Garut, Indonesia",
@@ -81,17 +80,6 @@ export const PORTFOLIO_DATA = {
       ]
     },
     {
-      role: "Various Media Roles",
-      company: "CV WartaMuda",
-      period: "Aug 2022 - Dec 2022",
-      description: [
-        "Field reporters who are skilled in interviewing, gathering data, and compiling news reports.",
-        "Write an interesting blog about tourism and copywrites content.",
-        "Content creator who focuses on creative video production. Able to write scripts, operate cameras, edit videos, and conceptualize interesting stories.",
-        "Event organizer with experience planning and executing various types of events, from workshops, seminars, to product exhibitions."
-      ]
-    },
-    {
       role: "Digital Business Intern",
       company: "Vinix7 (MSIB Program)",
       period: "Feb 2026 - May 2026",
@@ -100,6 +88,17 @@ export const PORTFOLIO_DATA = {
         "Developed a digital startup product concept, including business model canvas, business plan, and pitch deck.",
         "Designed product prototypes, pricing strategies, and operational business plans.",
         "Created social media marketing content and copywriting to support product branding and promotion. Collaborated with teams in digital business development and product strategy initiatives."
+      ]
+    },
+    {
+      role: "Various Media Roles",
+      company: "CV WartaMuda",
+      period: "Aug 2022 - Dec 2022",
+      description: [
+        "Field reporters who are skilled in interviewing, gathering data, and compiling news reports.",
+        "Write an interesting blog about tourism and copywrites content.",
+        "Content creator who focuses on creative video production. Able to write scripts, operate cameras, edit videos, and conceptualize interesting stories.",
+        "Event organizer with experience planning and executing various types of events, from workshops, seminars, to product exhibitions."
       ]
     }
   ],

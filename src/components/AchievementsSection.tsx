@@ -5,6 +5,8 @@ import { SectionHeading } from './SectionHeading';
 import { FullscreenModal } from './FullscreenModal';
 import { PORTFOLIO_DATA } from '@data/portfolioData';
 import certificatePreview from '../assets/images/achievement-certificate-preview.svg';
+import dmCert from '../assets/document/digital-marketing-certif.pdf';
+import pmCert from '../assets/document/pm-certif.pdf';
 
 interface Achievement {
   title: string;
@@ -54,26 +56,42 @@ export const AchievementsSection: React.FC = () => {
             <p className="text-xl text-gray-600 max-w-2xl">{selectedAch.details}</p>
             
             <div className="w-full max-w-4xl aspect-[1.4] bg-gray-100 mt-8 rounded-2xl overflow-hidden border-4 border-gray-200 shadow-xl relative">
+              {/* PDF preview for certificates */}
+              {selectedAch.title.toLowerCase().includes('digital marketing') && (
+                <iframe src={dmCert} title="Digital Marketing Certificate" className="w-full h-full" />
+              )}
+
+              {selectedAch.title.toLowerCase().includes('ict') && (
+                <iframe src={pmCert} title="ICT Project Management Certificate" className="w-full h-full" />
+              )}
+
+              {/* Publication preview via iframe when href exists */}
+              {selectedAch.href && (
+                <iframe src={selectedAch.href} title="Publication Preview" className="w-full h-full" />
+              )}
+
+              {/* Fallback visual */}
+              {!selectedAch.href && !selectedAch.title.toLowerCase().includes('digital marketing') && !selectedAch.title.toLowerCase().includes('ict') && (
                 <img 
                   src={certificatePreview} 
                   alt="Certificate Preview" 
                   className="w-full h-full object-cover mix-blend-multiply opacity-90" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                   <div className="text-left space-y-4">
-                     <p className="text-white font-medium text-lg">Official Document Preview for {selectedAch.title}</p>
-                     {selectedAch.href && (
-                       <a
-                         href={selectedAch.href}
-                         target="_blank"
-                         rel="noreferrer"
-                         className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-gray-900 transition-transform hover:-translate-y-0.5"
-                       >
-                         Open Publication
-                       </a>
-                     )}
-                   </div>
-                </div>
+              )}
+
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+                {selectedAch.title.toLowerCase().includes('digital marketing') && (
+                  <a href={dmCert} download className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow">Download Certificate</a>
+                )}
+
+                {selectedAch.title.toLowerCase().includes('ict') && (
+                  <a href={pmCert} download className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow">Download Certificate</a>
+                )}
+
+                {selectedAch.href && (
+                  <a href={selectedAch.href} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow">Open Publication</a>
+                )}
+              </div>
             </div>
           </div>
         )}
