@@ -45,7 +45,6 @@ export const ProjectsSection: React.FC = () => {
                 ) : (
                   <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent mix-blend-overlay"></div>
                 )}
-                <h3 className="text-4xl font-heading font-bold text-white text-center relative z-10 drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]">{project.title.split(' - ')[1] || project.title}</h3>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-20"></div>
               </div>
               
@@ -84,9 +83,6 @@ export const ProjectsSection: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"></div>
                 </>
               ) : null}
-              <h2 className="text-5xl md:text-7xl font-heading font-bold text-white text-center px-4 relative z-10 drop-shadow-[0_2px_18px_rgba(0,0,0,0.4)]">
-                {selectedProject.title.split(' - ')[1] || selectedProject.title}
-              </h2>
             </div>
             
             <div className="flex flex-col md:flex-row gap-8 md:gap-16">
@@ -118,11 +114,11 @@ export const ProjectsSection: React.FC = () => {
                     <h4 className="text-2xl font-heading font-semibold">Documentation</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
                       {selectedProject.images.map((image, idx) => (
-                        <figure key={idx} className="rounded-2xl border border-gray-100 bg-gray-50 shadow-sm p-3">
+                        <figure key={idx} className="aspect-[6/4] overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 shadow-sm">
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="block w-full h-auto max-h-[520px] object-contain mx-auto"
+                            className="block h-full w-full object-cover"
                           />
                         </figure>
                       ))}

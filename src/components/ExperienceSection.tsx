@@ -10,6 +10,7 @@ interface Experience {
   company: string;
   period: string;
   description: string[];
+  images?: { src: string; alt: string }[];
 }
 
 export const ExperienceSection: React.FC = () => {
@@ -79,6 +80,28 @@ export const ExperienceSection: React.FC = () => {
                 ))}
               </ul>
             </div>
+
+            {selectedExp.images?.length ? (
+              <div className="space-y-4">
+                <div className="flex items-center justify-between gap-4">
+                  <h4 className="text-lg font-semibold font-heading">Gallery</h4>
+                  <span className="text-sm text-gray-500">{selectedExp.images.length} image{selectedExp.images.length > 1 ? 's' : ''}</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {selectedExp.images.map((image, index) => (
+                    <figure key={index} className="group aspect-[6/4] overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 shadow-sm">
+                      <div className="h-full w-full overflow-hidden">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            ) : null}
             
             <div className="mt-8 p-6 bg-gray-50 rounded-2xl flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">

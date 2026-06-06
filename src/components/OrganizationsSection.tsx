@@ -47,7 +47,7 @@ export const OrganizationsSection: React.FC = () => {
                   style={{ clipPath: 'polygon(0 10%, 100% 0, 95% 90%, 5% 100%)'}}
                 ></div>
                 
-                <div className="aspect-video bg-gray-100 mb-4 flex items-center justify-center overflow-hidden border border-gray-200 rounded-2xl">
+                <div className="aspect-[6/4] bg-gray-100 mb-4 flex items-center justify-center overflow-hidden border border-gray-200 rounded-2xl">
                   {org.coverImage ? (
                     <img src={org.coverImage} alt={org.name} className="w-full h-full object-cover" />
                   ) : (
@@ -86,13 +86,20 @@ export const OrganizationsSection: React.FC = () => {
             {selectedOrg.images && selectedOrg.images.length > 0 && (
               <div className="space-y-4 pt-6 border-t border-gray-100 text-left">
                 <h4 className="text-2xl font-heading font-semibold text-center">Documentation</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
+                <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 items-start ${selectedOrg.name.includes('REBIZ') ? '' : ''}`}>
                   {selectedOrg.images.map((image, idx) => (
-                    <figure key={idx} className="rounded-2xl border border-gray-100 bg-gray-50 shadow-sm p-3">
+                    <figure
+                      key={idx}
+                      className={selectedOrg.name.includes('REBIZ')
+                        ? 'overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 shadow-sm'
+                        : 'aspect-[6/4] overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 shadow-sm'}
+                    >
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="block w-full h-auto max-h-[520px] object-contain mx-auto"
+                        className={selectedOrg.name.includes('REBIZ')
+                          ? 'block w-full h-auto object-contain'
+                          : 'block h-full w-full object-cover'}
                       />
                     </figure>
                   ))}
